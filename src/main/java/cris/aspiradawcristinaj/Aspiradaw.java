@@ -24,6 +24,9 @@ public class Aspiradaw {
         Scanner teclado = new Scanner(System.in);
         Random habitacionesRandom = new Random();
 
+        //Creamos una variable para la batería inicializada en 0.
+        int carga;
+
         //Para la hora y fecha.
         LocalDate hoy = LocalDate.now();
         LocalTime ahora = LocalTime.now();
@@ -39,7 +42,6 @@ public class Aspiradaw {
         //final String CONTRASENA = "usuario";
         //Para la hora y fecha
         //System.out.println(fecha);
-
         //Ponemos para que se introduzcan dependencias.
         int habitacion1 = Integer.parseInt(JOptionPane.showInputDialog(fecha + "\nIntroduzca los metros "
                 + "cuadrados de la habitación 1:"));
@@ -51,8 +53,7 @@ public class Aspiradaw {
                 + "cuadrados del salón:"));
         int bano = Integer.parseInt(JOptionPane.showInputDialog(fecha + "\nIntroduzca los metros "
                 + "cuadrados del baño:"));
-        
-        
+
         //Ponemos el if para que el valor de las habitaciones sea válido.
         if (habitacion1 >= 0 && habitacion1 <= 100
                 && habitacion2 >= 0 && habitacion2 <= 100
@@ -69,21 +70,21 @@ public class Aspiradaw {
             //+ "1.Aspiración\n"
             //+ "2.Aspiración y fregado\n"
             //+ "3.Salir");
-            int[] opciones = {1, 2, 3};
-            JOptionPane.showOptionDialog(null, fecha + "\nElija una opción",
-                    "Elija una opcion", JOptionPane.DEFAULT_OPTION, salon, null,
-                    args, opciones);
-            int opcionPrincipal = teclado.nextInt();
+            int opcionPrincipal = Integer.parseInt(JOptionPane.showInputDialog(fecha + "\nElija una opción:"
+                    + "\n1.Apiración"
+                    + "\n2.Aspiración y fregado"
+                    + "\n3.Salir."));
             switch (opcionPrincipal) {
 
                 //Opción de Aspirar
                 case 1:
-                    System.out.println(fecha);
-                    System.out.println("Elija una opción:\n"
-                            + "1.Completo\n"
-                            + "2.Dependencias\n"
-                            + "3.Salir");
-                    int opcionAspirar = teclado.nextInt();
+
+                    int opcionAspirar = Integer.parseInt(
+                            JOptionPane.showInputDialog(fecha
+                                    + "\nElija una opción:"
+                                    + "\n1.Completo"
+                                    + "\n2.Dependencias"
+                                    + "\n3.Salir."));
 
                     switch (opcionAspirar) {
                         //Completo
@@ -92,48 +93,159 @@ public class Aspiradaw {
                         //System.out.println("El robot está en la habitación " + 
                         //Por dependencias
                         case 2:
-                            System.out.println(fecha);
+                            int opcionDependenciasAspirar
+                                    = Integer.parseInt(
+                                            JOptionPane.showInputDialog(
+                                                    fecha
+                                                    + "\nElija una opción:"
+                                                    + "\n1.Habitación 1"
+                                                    + "\n2.Habitación 2"
+                                                    + "\n3.Salón"
+                                                    + "\n4.Cocina"
+                                                    + "\n5.Baño"
+                                                    + "\n6.Salir."));
+                            switch (opcionDependenciasAspirar) {
+
+                                case 1:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nEligió la opción "
+                                            + "de aspirar "
+                                                    + "la habitación 1.");
+                                    break;
+                                case 2:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nEligió la opción "
+                                            + "de aspirar"
+                                                    + " la habitación 2.");
+                                    break;
+                                case 3:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nEligió la opción "
+                                            + "de aspirar el salón.");
+                                    break;
+                                case 4:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nEligió la opción "
+                                            + "de aspirar la cocina.");
+                                    break;
+                                case 5:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nEligió la opción "
+                                            + "de aspirar el baño.");
+                                    break;
+                                case 6:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nHasta la próxima.");
+                                    break;
+                                default:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nIntroduzca un valor válido.");
+                                    return;
+
+                            }
+
 
                         //Salir
                         case 3:
-                            System.out.println("Hasta la próxima.");
+                            JOptionPane.showMessageDialog(null, fecha
+                                    + "\nHasta la próxima");
                             break;
                         default:
-                            System.out.println("Ha introducido un valor erróneo");
+                            JOptionPane.showMessageDialog(null, fecha
+                                    + "\nHa introducido datos erróneos");
                             return;
 
                     }
 
                 //Opcioón aspirar y limpiar.
                 case 2:
-                    System.out.println(fecha);
-                    System.out.println("Elija una opción:\n"
-                            + "1.completo\n"
-                            + "2.Dependencias\n"
-                            + "3.Salir");
-                    int opcionAspirarYLimpiar = teclado.nextInt();
+
+                    int opcionAspirarYLimpiar = Integer.parseInt(JOptionPane.showInputDialog(fecha + "\nElija una opción:"
+                            + "\n1.Completo"
+                            + "\n2.Dependencias"
+                            + "\n3.Salir."));
                     switch (opcionAspirarYLimpiar) {
                         //Completo
                         case 1:
-                            System.out.println(fecha);
+                            JOptionPane.showMessageDialog(null, fecha
+                                    + "\nVamos a aspirar y "
+                                    + "limpiar de forma completa");
 
                         //Por dependencias
                         case 2:
-                            System.out.println(fecha);
+                            JOptionPane.showMessageDialog(null, fecha
+                                    + "\nVamos a aspirar y limpiar "
+                                    + "por dependencias");
+                            int opcionDependenciasAspirarYLimpiar
+                                    = Integer.parseInt(
+                                            JOptionPane.showInputDialog(
+                                                    fecha
+                                                    + "\nElija una opción:"
+                                                    + "\n1.Habitación 1"
+                                                    + "\n2.Habitación 2"
+                                                    + "\n3.Salón"
+                                                    + "\n4.Cocina"
+                                                    + "\n5.Baño"
+                                                    + "\n6.Salir."));
+                            switch (opcionDependenciasAspirarYLimpiar) {
+
+                                case 1:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nEligió la opción "
+                                            + "de limpiar y "
+                                            + "aspirar la habitación 1.");
+                                    break;
+                                case 2:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nEligió la opción "
+                                            + "de limpiar y "
+                                            + "aspirar la habitación 2.");
+                                    break;
+                                case 3:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nEligió la opción "
+                                            + "de limpiar y "
+                                            + "aspirar el salón.");
+                                    break;
+                                case 4:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nEligió la opción "
+                                            + "de limpiar y "
+                                            + "aspirar la cocina.");
+                                    break;
+                                case 5:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nEligió la opción "
+                                            + "de limpiar y "
+                                            + "aspirar el baño.");
+                                    break;
+                                case 6:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nHasta la próxima.");
+                                    break;
+                                default:
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\nIntroduzca un valor válido.");
+                                    return;
+
+                            }
 
                         //Salir
                         case 3:
-                            System.out.println("Hasta la próxima.");
+                            JOptionPane.showMessageDialog(null, fecha
+                                    + "\nHasta la próxima");
                             break;
 
                     }
 
                 case 3:
-                    System.out.println("Hasta la próxima.");
+                    JOptionPane.showMessageDialog(null, fecha
+                            + "\nHasta la próxima");
                     break;
 
                 default:
-                    System.out.println("Ha introducido un valor erróneo");
+                    JOptionPane.showMessageDialog(null, fecha
+                            + "\nHa introducido un valor incorrecto.");
                     return;
 
             }
