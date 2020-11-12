@@ -38,10 +38,16 @@ public class Aspiradaw {
 
         //System.out.println(fecha);
         //Pedimos usuario y contrase√±a.
-        //final String USUARIO = "usuario";
-        //final String CONTRASENA = "usuario";
-        //Para la hora y fecha
-        //System.out.println(fecha);
+        final String USUARIO = "usuario";
+        final String CONTRASENA = "usuario";
+        String entrar1 = JOptionPane.showInputDialog(fecha 
+                + "\nIntroduzca usuario");
+        String entrar2 = JOptionPane.showInputDialog(fecha 
+                + "\nIntroduzca contraseÒa");
+        if(USUARIO == entrar1 && CONTRASENA == entrar2){
+        
+        
+        
         //Ponemos para que se introduzcan dependencias.
         int habitacion1 = Integer.parseInt(JOptionPane.showInputDialog(fecha + "\nIntroduzca los metros "
                 + "cuadrados de la habitaci√≥n 1:"));
@@ -252,6 +258,10 @@ public class Aspiradaw {
         } else {
             JOptionPane.showMessageDialog(null, fecha + "\nHa introducido "
                     + "datos err√≥neos");
+        }
+        }else{
+            System.out.println("Ha introducido un"
+                    + " usuario o contraseÒa incorrectos");
         }
     }
 
