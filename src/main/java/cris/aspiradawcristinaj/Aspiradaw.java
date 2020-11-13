@@ -36,15 +36,14 @@ public class Aspiradaw {
         JOptionPane.showMessageDialog(null, "Bienvenido a tu robot de limpieza "
                 + "favorito.");
 
-        //System.out.println(fecha);
         //Pedimos usuario y contraseña.
         final String USUARIO = "usuario";
         final String CONTRASENA = "usuario";
         String entrar1 = JOptionPane.showInputDialog(fecha 
                 + "\nIntroduzca usuario");
         String entrar2 = JOptionPane.showInputDialog(fecha 
-                + "\nIntroduzca contrase�a");
-        if(USUARIO == entrar1 && CONTRASENA == entrar2){
+                + "\nIntroduzca contraseña");
+        if(USUARIO != entrar1 && CONTRASENA != entrar2){
         
         
         //Para que el usuario ponga la batería del robot.
@@ -77,10 +76,6 @@ public class Aspiradaw {
                     + "total de: " + suma + " metros cuadrados");
 
             //Ponemos el menú de opciones.
-            //System.out.println("Elija una opción:\n"
-            //+ "1.Aspiración\n"
-            //+ "2.Aspiración y fregado\n"
-            //+ "3.Salir");
             int opcionPrincipal = Integer.parseInt(JOptionPane.showInputDialog(fecha + "\nElija una opción:"
                     + "\n1.Apiración"
                     + "\n2.Aspiración y fregado"
@@ -105,7 +100,7 @@ public class Aspiradaw {
                          double restaCarga1 = carga - restaAspiracion1;
                          
                          if(restaCarga1 <= 3){
-                             System.out.println(fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "\n5" 
                                      + "\n" + suma + " metros cuadrados."
                                      + "\nRobot: Me voy a mi "
                                      + "base a reponer batería\n"
@@ -116,7 +111,7 @@ public class Aspiradaw {
                          double restaCarga2 = carga - restaAspiracion2;
                          
                          if(restaCarga2 <= 3){
-                             System.out.println(fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "\n5" 
                                      + "\n" + suma + " metros cuadrados."
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
@@ -127,11 +122,11 @@ public class Aspiradaw {
                          double restaCarga3 = carga - restaAspiracion3;
                          
                          if(restaCarga3 <= 3){
-                             System.out.println(fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "\n5" 
                                      + "\n" + suma + " metros cuadrados."
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
-                                     + "Hasta ahora limipié solo la habitación 1, 2"
+                                     + "Hasta ahora limipié solo la habitación 1, 2 "
                                      + "y cocina");
                           carga = 100;
                          }else{
@@ -139,11 +134,11 @@ public class Aspiradaw {
                          double restaCarga4 = carga - restaAspiracion4;
                          
                          if(restaCarga4 <= 3){
-                             System.out.println(fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "\n5" 
                                      + "\n" + suma + " metros cuadrados."
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
-                                     + "Hasta ahora limipié solo la habitación 1, 2"
+                                     + "Hasta ahora limipié solo la habitación 1, 2 "
                                      + ",cocina y salon");
                           carga = 100;
                          }else{
@@ -194,6 +189,13 @@ public class Aspiradaw {
                                             + "de aspirar "
                                             + "la habitación 1.");
                                     double resta2 = (1.5 * habitacion1) - habitacion1;
+                                    if(resta2 <= 3){
+                                    JOptionPane.showMessageDialog(null,fecha 
+                                            + "\n"  + carga + " %\n5" 
+                                            + "\n" + suma + " metros cuadrados."
+                                            + "\nUy, no tengo batería, me voy a mi base." );
+                                    carga = 100;
+                                    }
                                     break;
                                 case 2:
                                     JOptionPane.showMessageDialog(null, fecha 
@@ -202,6 +204,14 @@ public class Aspiradaw {
                                             + "\nEligió la opción "
                                             + "de aspirar"
                                             + " la habitación 2.");
+                                    double resta3 = (1.5 * habitacion2) - habitacion2;
+                                    if(resta3 <= 3){
+                                    JOptionPane.showMessageDialog(null,fecha 
+                                            + "\n"  + carga + " %\n5" 
+                                            + "\n" + suma + " metros cuadrados."
+                                            + "\nUy, no tengo batería, me voy a mi base." );
+                                    carga = 100;
+                                    }
                                     break;
                                 case 3:
                                     JOptionPane.showMessageDialog(null, fecha 
@@ -209,6 +219,14 @@ public class Aspiradaw {
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de aspirar el salón.");
+                                    double resta4 = (1.5 * salon) - salon;
+                                    if(resta4 <= 3){
+                                    JOptionPane.showMessageDialog(null,fecha 
+                                            + "\n"  + carga + " %\n5" 
+                                            + "\n" + suma + " metros cuadrados."
+                                            + "\nUy, no tengo batería, me voy a mi base." );
+                                    carga = 100;
+                                    }
                                     break;
                                 case 4:
                                     JOptionPane.showMessageDialog(null, fecha 
@@ -216,6 +234,14 @@ public class Aspiradaw {
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de aspirar la cocina.");
+                                    double resta5= (1.5 * cocina) - cocina;
+                                    if(resta5 <= 3){
+                                    JOptionPane.showMessageDialog(null,fecha 
+                                            + "\n"  + carga + " %\n5" 
+                                            + "\n" + suma + " metros cuadrados."
+                                            + "\nUy, no tengo batería, me voy a mi base." );
+                                    carga = 100;
+                                    }
                                     break;
                                 case 5:
                                     JOptionPane.showMessageDialog(null, fecha 
@@ -223,6 +249,7 @@ public class Aspiradaw {
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de aspirar el baño.");
+                                    double resta6 = (1.5 * bano) - bano;
                                     break;
                                 case 6:
                                     JOptionPane.showMessageDialog(null, fecha 
@@ -270,9 +297,7 @@ public class Aspiradaw {
                         //Completo
                         case 1:
                             JOptionPane.showMessageDialog(null, fecha 
-                                    + "\n"  + carga + "\n5" 
-                                    + "\n" + suma + " metros cuadrados." 
-                                    + "\n"  + carga + "\n5" 
+                                    + "\n"  + carga + "\n5 dependencias" 
                                     + "\n" + suma + " metros cuadrados."
                                     + "\nVamos a aspirar y "
                                     + "limpiar de forma completa");
@@ -280,7 +305,7 @@ public class Aspiradaw {
                          double restaCarga6 = carga - restaAspiracionYLimpieza1;
                          
                          if(restaCarga6 <= 3){
-                             System.out.println(fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "\n5" 
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a mi "
                                      + "base a reponer batería\n"
@@ -291,7 +316,7 @@ public class Aspiradaw {
                          double restaCarga7 = carga - restaAspiracionYLimpieza2;
                          
                          if(restaCarga7 <= 3){
-                             System.out.println(fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "\n5" 
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
@@ -302,11 +327,11 @@ public class Aspiradaw {
                          double restaCarga8 = carga - restaAspiracionYLimpieza3;
                          
                          if(restaCarga8 <= 3){
-                             System.out.println(fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "\n5" 
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
-                                     + "Hasta ahora limipié solo la habitación 1, 2"
+                                     + "Hasta ahora limipié solo la habitación 1, 2 "
                                      + "y cocina");
                           carga = 100;
                          }else{
@@ -314,11 +339,11 @@ public class Aspiradaw {
                          double restaCarga9 = carga - restaAspiracionYLimpieza4;
                          
                          if(restaCarga9 <= 3){
-                             System.out.println(fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "\n5" 
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
-                                     + "Hasta ahora limipié solo la habitación 1, 2"
+                                     + "Hasta ahora limipié solo la habitación 1, 2 "
                                      + ",cocina y salon");
                           carga = 100;
                          }else{
@@ -326,7 +351,7 @@ public class Aspiradaw {
                          double restaCarga10 = carga - restaAspiracionYLimpieza5;
                          
                          if(restaCarga10 <= 3){
-                             System.out.println(fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "\n5" 
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
@@ -368,6 +393,14 @@ public class Aspiradaw {
                                             + "\nEligió la opción "
                                             + "de limpiar y "
                                             + "aspirar la habitación 1.");
+                                    double resta7 = (2.25 * habitacion1) - habitacion1;
+                                    if(resta7 <= 3){
+                                    JOptionPane.showMessageDialog(null,fecha 
+                                            + "\n"  + carga + " %\n5" 
+                                            + "\n" + suma + " metros cuadrados."
+                                            + "\nUy, no tengo batería, me voy a mi base." );
+                                    carga = 100;
+                                    }
                                     break;
                                 case 2:
                                     JOptionPane.showMessageDialog(null, fecha 
@@ -376,6 +409,15 @@ public class Aspiradaw {
                                             + "\nEligió la opción "
                                             + "de limpiar y "
                                             + "aspirar la habitación 2.");
+                                    double resta8 = (2.25 * habitacion2) - habitacion2;
+                                    if(resta8 <= 3){
+                                    JOptionPane.showMessageDialog(null,fecha 
+                                            + "\n"  + carga + " %\n5" 
+                                            + "\n" + suma + " metros cuadrados."
+                                            + "\nUy, no tengo batería, me voy a mi base." );
+                                    carga = 100;
+                                    }
+
                                     break;
                                 case 3:
                                     JOptionPane.showMessageDialog(null, fecha 
@@ -384,6 +426,18 @@ public class Aspiradaw {
                                             + "\nEligió la opción "
                                             + "de limpiar y "
                                             + "aspirar el salón.");
+                                    
+                                    double resta9 = (2.25 * salon) - salon;
+                                    
+                                    if(resta9 <= 3){
+                                    JOptionPane.showMessageDialog(null,fecha 
+                                            + "\n"  + carga + " %\n5" 
+                                            + "\n" + suma + " metros cuadrados."
+                                            + "\nUy, no tengo batería, me voy a mi base." );
+                                    carga = 100;
+                                    }
+
+
                                     break;
                                 case 4:
                                     JOptionPane.showMessageDialog(null, fecha 
@@ -392,6 +446,19 @@ public class Aspiradaw {
                                             + "\nEligió la opción "
                                             + "de limpiar y "
                                             + "aspirar la cocina.");
+                                    
+                                    double resta10 = (2.25 * cocina) - cocina;
+                                    
+                                    if(resta10 <= 3){
+                                    JOptionPane.showMessageDialog(null,fecha 
+                                            + "\n"  + carga + " %\n5" 
+                                            + "\n" + suma + " metros cuadrados."
+                                            + "\nUy, no tengo batería, me voy a mi base." );
+                                    
+                                    carga = 100;
+                                    }
+
+
                                     break;
                                 case 5:
                                     JOptionPane.showMessageDialog(null, fecha 
@@ -400,6 +467,17 @@ public class Aspiradaw {
                                             + "\nEligió la opción "
                                             + "de limpiar y "
                                             + "aspirar el baño.");
+                                    
+                                    double resta11 = (2.25 * bano) - bano;
+                                    
+                                    if(resta11 <= 3){
+                                    JOptionPane.showMessageDialog(null,fecha 
+                                            + "\n"  + carga + " %\n5" 
+                                            + "\n" + suma + " metros cuadrados."
+                                            + "\nUy, no tengo batería, me voy a mi base." );
+                                    carga = 100;
+                                    }
+
                                     break;
                                 case 6:
                                     JOptionPane.showMessageDialog(null, fecha 
@@ -445,8 +523,8 @@ public class Aspiradaw {
                     + "datos erróneos");
         }
         }else{
-            System.out.println("Ha introducido un"
-                    + " usuario o contrase�a incorrectos");
+            JOptionPane.showMessageDialog(null, fecha + "\nHa introducido "
+                    + "datos erróneos");
         }
     }
 
