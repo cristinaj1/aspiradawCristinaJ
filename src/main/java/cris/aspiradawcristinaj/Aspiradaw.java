@@ -24,7 +24,7 @@ public class Aspiradaw {
         Scanner teclado = new Scanner(System.in);
         Random habitacionesRandom = new Random();
 
-        //Creamos una variable para la batería inicializada en 0.
+        //Creamos una variable para la batería.
         int carga;
 
         //Para la hora y fecha.
@@ -43,7 +43,7 @@ public class Aspiradaw {
                 + "\nIntroduzca usuario");
         String entrar2 = JOptionPane.showInputDialog(fecha 
                 + "\nIntroduzca contraseña");
-        if(USUARIO != entrar1 && CONTRASENA != entrar2){
+        if(entrar1.equals(USUARIO) && entrar2.equals(CONTRASENA)){
         
         
         //Para que el usuario ponga la batería del robot.
@@ -94,6 +94,7 @@ public class Aspiradaw {
                                     + "\n3.Salir."));
 
                     switch (opcionAspirar) {
+                        
                         //Completo
                         case 1:
                          double restaAspiracion1 = (1.5 * habitacion1) - habitacion1;
@@ -146,24 +147,22 @@ public class Aspiradaw {
                          double restaCarga5 = carga - restaAspiracion5;
                          
                          if(restaCarga5 <= 3){
-                             System.out.println(fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null,
+                                     fecha + "\n"  + carga + "\n5" 
                                      + "\n" + suma + " metros cuadrados."
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
                                      + "Ya limpié toda la casa");
                           carga = 100;
                          }else{
-                             
+                            JOptionPane.showMessageDialog(null,"Limpié toda la casa");
                          }
                          } 
                          } 
                          }
                          }
                         
-                            
-                        //System.out.println("El robot está en la habitación " + 
-                        
-
+                       break;
 
                         //Por dependencias
                         case 2:
@@ -252,10 +251,6 @@ public class Aspiradaw {
                                     double resta6 = (1.5 * bano) - bano;
                                     break;
                                 case 6:
-                                    JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
-                                            + "\n" + suma + " metros cuadrados."
-                                            + "\nHasta la próxima.");
                                     break;
                                 default:
                                     JOptionPane.showMessageDialog(null, fecha 
@@ -269,20 +264,16 @@ public class Aspiradaw {
 
                         //Salir
                         case 3:
-                            JOptionPane.showMessageDialog(null, fecha 
-                                    + "\n"  + carga + "\n5" 
-                                    + "\n" + suma + " metros cuadrados."
-                                    + "\nHasta la próxima");
                             break;
                         default:
                             JOptionPane.showMessageDialog(null, fecha
                                     + "\n"  + carga + "\n5" 
                                     + "\n" + suma + " metros cuadrados."
                                     + "\nHa introducido datos erróneos");
-                            return;
+                          
 
                     }
-
+                    break;
                 //Opcioón aspirar y limpiar.
                 case 2:
 
@@ -358,13 +349,14 @@ public class Aspiradaw {
                                      + "Ya limpié toda la casa");
                           carga = 100;
                          }else{
-                             
+                             JOptionPane.showMessageDialog(null,"Limpié toda la casa");
                          }
                          } 
                          } 
                          }
                          }
-
+                         
+                         break;
                         //Por dependencias
                         case 2:
                             JOptionPane.showMessageDialog(null, fecha + "\n"  
@@ -490,16 +482,12 @@ public class Aspiradaw {
                                             + "\n"  + carga + "\n5" 
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nIntroduzca un valor válido.");
-                                    return;
+                                    break;
 
                             }
 
                         //Salir
                         case 3:
-                            JOptionPane.showMessageDialog(null, fecha 
-                                    + "\n"  + carga + "\n5" 
-                                    + "\n" + suma + " metros cuadrados."
-                                    + "\nHasta la próxima");
                             break;
 
                     }
@@ -514,17 +502,19 @@ public class Aspiradaw {
                     JOptionPane.showMessageDialog(null, fecha + "\n"  
                             + carga + "\n5" + "\n" + suma + " metros cuadrados."
                             + "\nHa introducido un valor incorrecto.");
-                    return;
+                    
 
             }
         } else {
             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "\n5"
                     + "\nHa introducido "
                     + "datos erróneos");
+            
         }
         }else{
             JOptionPane.showMessageDialog(null, fecha + "\nHa introducido "
                     + "datos erróneos");
+            
         }
     }
 
