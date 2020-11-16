@@ -34,7 +34,8 @@ public class Aspiradaw {
         LocalDate hoy = LocalDate.now();
         LocalTime ahora = LocalTime.now();
         LocalDateTime fecha = LocalDateTime.of(hoy, ahora);
-
+        
+        
         //Intro al programa.
         JOptionPane.showMessageDialog(null, "Bienvenido a tu robot de limpieza "
                 + "favorito.");
@@ -77,12 +78,15 @@ public class Aspiradaw {
             int suma = habitacion1 + habitacion2 + cocina + salon + bano;
             JOptionPane.showMessageDialog(null, fecha + "\nLa casa tiene un "
                     + "total de: " + suma + " metros cuadrados");
-
+            int opcionPrincipal=0;
+            //Para que se ejecute el programa y salga en el 3.
+            do{
             //Ponemos el menú de opciones.
-            int opcionPrincipal = Integer.parseInt(JOptionPane.showInputDialog(fecha + "\nElija una opción:"
+            opcionPrincipal = Integer.parseInt(JOptionPane.showInputDialog(fecha + "\nElija una opción:"
                     + "\n1.Apiración"
                     + "\n2.Aspiración y fregado"
                     + "\n3.Salir."));
+            
             switch (opcionPrincipal) {
 
                 //Opción de Aspirar
@@ -102,7 +106,7 @@ public class Aspiradaw {
                         case 1:
                          double restaAspiracion1 = (1.5 * habitacion1) - habitacion1;
                          double restaCarga1 = carga - restaAspiracion1;
-                         
+                         //Primer departamento para completo
                          if(restaCarga1 <= 3){
                              JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados."
@@ -125,6 +129,7 @@ public class Aspiradaw {
                          double restaAspiracion2 = ((1.5 * habitacion2) - habitacion2) + restaAspiracion1;
                          double restaCarga2 = carga - restaAspiracion2;
                          
+                         //Segundo departamento para completo
                          if(restaCarga2 <= 3){
                              JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados."
@@ -148,6 +153,7 @@ public class Aspiradaw {
                          double restaAspiracion3 = ((1.5 * cocina) - cocina) + restaAspiracion2;
                          double restaCarga3 = carga - restaAspiracion3;
                          
+                         //Tercer departamento para completo
                          if(restaCarga3 <= 3){
                              JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados."
@@ -171,6 +177,7 @@ public class Aspiradaw {
                          double restaAspiracion4 = ((1.5 * salon) - salon) + restaAspiracion3;
                          double restaCarga4 = carga - restaAspiracion4;
                          
+                         //Cuarto departamento para completo
                          if(restaCarga4 <= 3){
                              JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "%\n5 dependencias"  
                                      + "\n" + suma + " metros cuadrados."
@@ -178,6 +185,7 @@ public class Aspiradaw {
                                      + "mi base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1, 2 "
                                      + ",cocina y salon");
+                             //Para que salga una habitación donde se encuentra el  robot
                              if (elegido == 1){
                                  JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
                              } else if (elegido == 2) {
@@ -194,6 +202,7 @@ public class Aspiradaw {
                          double restaAspiracion5 = ((1.5 * bano) - bano) + restaAspiracion4;
                          double restaCarga5 = carga - restaAspiracion5;
                          
+                         //Quinto departamento para completo
                          if(restaCarga5 <= 3){
                              JOptionPane.showMessageDialog(null,
                                      fecha + "\n"  + carga + "%\n5 dependencias"  
@@ -201,6 +210,7 @@ public class Aspiradaw {
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
                                      + "Ya limpié toda la casa");
+                             //Para que salga una habitación donde se encuentra el  robot
                              if (elegido == 1){
                                  JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
                              } else if (elegido == 2) {
@@ -215,6 +225,7 @@ public class Aspiradaw {
                           carga = 100;
                          }else{
                             JOptionPane.showMessageDialog(null,"Limpié toda la casa");
+                            //Para que salga una habitación donde se encuentra el  robot
                             if (elegido == 1){
                                  JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
                              } else if (elegido == 2) {
@@ -236,18 +247,20 @@ public class Aspiradaw {
 
                         //Por dependencias
                         case 2:
-                            int opcionDependenciasAspirar
-                                    = Integer.parseInt(
-                                            JOptionPane.showInputDialog(
-                                                    fecha + "\n"  + carga + "%\n5 dependencias"  
-                                                    + "\n" + suma + " metros cuadrados."
-                                                    + "\nElija una opción:"
-                                                    + "\n1.Habitación 1"
-                                                    + "\n2.Habitación 2"
-                                                    + "\n3.Salón"
-                                                    + "\n4.Cocina"
-                                                    + "\n5.Baño"
-                                                    + "\n6.Salir."));
+                            int opcionDependenciasAspirar = 0;
+                            //Para que al pulsar 6 puedas salir al menú anterior por si el usuario se ha equivocado de opción.
+                            do{
+                            opcionDependenciasAspirar = Integer.parseInt(
+                                     JOptionPane.showInputDialog(
+                                            fecha + "\n"  + carga + "%\n5 dependencias"  
+                                           + "\n" + suma + " metros cuadrados."
+                                                + "\nElija una opción:"
+                                                + "\n1.Habitación 1"
+                                                + "\n2.Habitación 2"
+                                                + "\n3.Salón"
+                                                + "\n4.Cocina"
+                                                + "\n5.Baño"
+                                                + "\n6.Salir."));
                             switch (opcionDependenciasAspirar) {
 
                                 case 1:
@@ -320,20 +333,29 @@ public class Aspiradaw {
                                             + "de aspirar el baño.");
                                     double resta6 = (1.5 * bano) - bano;
                                     break;
-                                case 6:
+                                case 6: 
+                                    JOptionPane.showMessageDialog(null, fecha
+                                            + "\n" + carga + "%\n5"
+                                            + "dependencias\n"
+                                            + suma + " metros cuadrados."
+                                            + "\nHasta la próxima.");
                                     break;
+                                    
                                 default:
                                     JOptionPane.showMessageDialog(null, fecha 
                                             + "\n"  + carga + "%\n5 dependencias" 
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nIntroduzca un valor válido.");
-                                    return;
-
-                            }
-
-
+                                    break;
+                            }}while(opcionDependenciasAspirar !=6);
                         //Salir
-                        case 3:
+                        case 3: 
+                            JOptionPane.showMessageDialog(null, fecha
+                                    + "\n" + carga + "%\n5"
+                                    + "dependencias\n"
+                                    + suma + " metros cuadrados."
+                                    + "\nHasta la próxima.");
+
                             break;
                         default:
                             JOptionPane.showMessageDialog(null, fecha
@@ -341,13 +363,16 @@ public class Aspiradaw {
                                     + "\n" + suma + " metros cuadrados."
                                     + "\nHa introducido datos erróneos");
                           
-
+                            
                     }
+            
                     break;
                 //Opcioón aspirar y limpiar.
                 case 2:
-
-                    int opcionAspirarYLimpiar = Integer.parseInt(JOptionPane.showInputDialog(
+                    int opcionAspirarYLimpiar = 0;
+                    //Para que el usuario cuando meta 3 se pueda volver al caso anterior por si se ha equivocado.
+                    do{
+                    opcionAspirarYLimpiar = Integer.parseInt(JOptionPane.showInputDialog(
                             fecha + "\n"  + carga + "%\n5 dependencias"  
                             + "\n" + suma + " metros cuadrados."
                             + "\nElija una opción:"
@@ -355,6 +380,7 @@ public class Aspiradaw {
                             + "\n2.Dependencias"
                             + "\n3.Salir."));
                     switch (opcionAspirarYLimpiar) {
+                        
                         //Completo
                         case 1:
                             JOptionPane.showMessageDialog(null, fecha 
@@ -362,6 +388,7 @@ public class Aspiradaw {
                                     + "\n" + suma + " metros cuadrados."
                                     + "\nVamos a aspirar y "
                                     + "limpiar de forma completa");
+                            //Para que salga una habitación donde se encuentra el  robot
                             if (elegido == 1){
                                  JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
                              } else if (elegido == 2) {
@@ -375,13 +402,14 @@ public class Aspiradaw {
                              }
                             double restaAspiracionYLimpieza1 = (2.25 * habitacion1) - habitacion1;
                          double restaCarga6 = carga - restaAspiracionYLimpieza1;
-                         
+                         //Primer departamento aspiración y limpieza.
                          if(restaCarga6 <= 3){
                              JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a mi "
                                      + "base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1");
+                             //Para que salga una habitación donde se encuentra el  robot
                              if (elegido == 1){
                                  JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
                              } else if (elegido == 2) {
@@ -398,12 +426,14 @@ public class Aspiradaw {
                          double restaAspiracionYLimpieza2 = ((2.25 * habitacion2) - habitacion2) + restaAspiracionYLimpieza1;
                          double restaCarga7 = carga - restaAspiracionYLimpieza2;
                          
+                         //Segundo departamento aspiración y limpieza.
                          if(restaCarga7 <= 3){
                              JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1 y 2");
+                             //Para que salga una habitación donde se encuentra el  robot
                              if (elegido == 1){
                                  JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
                              } else if (elegido == 2) {
@@ -420,6 +450,7 @@ public class Aspiradaw {
                          double restaAspiracionYLimpieza3 = ((2.25 * cocina) - cocina) + restaAspiracionYLimpieza2;
                          double restaCarga8 = carga - restaAspiracionYLimpieza3;
                          
+                         //Tercer departamento aspiración y limpieza.
                          if(restaCarga8 <= 3){
                              JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "%\n5 dependencias"  
                                      + "\n" + suma + " metros cuadrados." 
@@ -427,6 +458,7 @@ public class Aspiradaw {
                                      + "mi base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1, 2 "
                                      + "y cocina");
+                             //Para que salga una habitación donde se encuentra el  robot
                              if (elegido == 1){
                                  JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
                              } else if (elegido == 2) {
@@ -443,6 +475,7 @@ public class Aspiradaw {
                          double restaAspiracionYLimpieza4 = ((2.25 * salon) - salon) + restaAspiracionYLimpieza3;
                          double restaCarga9 = carga - restaAspiracionYLimpieza4;
                          
+                         //Cuarto departamento aspiración y limpieza.
                          if(restaCarga9 <= 3){
                              JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados." 
@@ -450,6 +483,7 @@ public class Aspiradaw {
                                      + "mi base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1, 2 "
                                      + ",cocina y salon");
+                             //Para que salga una habitación donde se encuentra el  robot
                              if (elegido == 1){
                                  JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
                              } else if (elegido == 2) {
@@ -466,12 +500,14 @@ public class Aspiradaw {
                          double restaAspiracionYLimpieza5 = ((2.25 * bano) - bano) + restaAspiracionYLimpieza4;
                          double restaCarga10 = carga - restaAspiracionYLimpieza5;
                          
+                         //Quinto departamento aspiración y limpieza.
                          if(restaCarga10 <= 3){
                              JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
                                      + "Ya limpié toda la casa");
+                             //Para que salga una habitación donde se encuentra el  robot
                              if (elegido == 1){
                                  JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
                              } else if (elegido == 2) {
@@ -484,8 +520,6 @@ public class Aspiradaw {
                                  JOptionPane.showMessageDialog(null, "Estoy en el salón");
                              }
                           carga = 100;
-                         }else{
-                             
                          }
                          } 
                          } 
@@ -495,12 +529,15 @@ public class Aspiradaw {
                          break;
                         //Por dependencias
                         case 2:
+                            int opcionDependenciasAspirarYLimpiar = 0;
+                            //Para que el usuario cuando pulse 6 se vuelva al menú anterior por si se ha equivocado.
+                            do{
                             JOptionPane.showMessageDialog(null, fecha + "\n"  
                                     + carga+ "%\n5" + "dependencias\n" + suma 
                                     + " metros cuadrados."
                                     + "\nVamos a aspirar y limpiar "
                                     + "por dependencias");
-                            int opcionDependenciasAspirarYLimpiar
+                            opcionDependenciasAspirarYLimpiar
                                     = Integer.parseInt(
                                             JOptionPane.showInputDialog(
                                                     fecha + "\n"  + carga  + "%\n5" 
@@ -621,14 +658,15 @@ public class Aspiradaw {
                                             + suma + " metros cuadrados."
                                             + "\nIntroduzca un valor válido.");
                                     break;
-
+                             
                             }
-
+                            }while(opcionDependenciasAspirarYLimpiar != 6);
                         //Salir
                         case 3:
                             break;
 
                     }
+                    }while(opcionAspirarYLimpiar != 3);
 
                 case 3:
                     JOptionPane.showMessageDialog(null, fecha + "\n" 
@@ -644,8 +682,11 @@ public class Aspiradaw {
                             + "\nHa introducido un valor incorrecto.");
                     
 
+                    
             }
-            
+        
+        
+        }while(opcionPrincipal != 3); 
         } else {
             JOptionPane.showMessageDialog(null, fecha + "\n"  
                     + carga  + "%\n5" + "dependencias\n" 
@@ -653,11 +694,14 @@ public class Aspiradaw {
                     + "datos erróneos");
             
         }
+        
         }else{
             JOptionPane.showMessageDialog(null, fecha + "\nHa introducido "
                     + "datos erróneos");
             
+     
         }
+        
+    
     }
-
-}
+    }
