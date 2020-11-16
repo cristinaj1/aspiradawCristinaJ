@@ -20,10 +20,13 @@ import javax.swing.JOptionPane;
 public class Aspiradaw {
 
     public static void main(String[] args) {
-        //Creamos primero el scanner para que meta datos por teclado
-        Scanner teclado = new Scanner(System.in);
+        //Creamos random para que nos diga en qué habitación está
         Random habitacionesRandom = new Random();
-
+        
+        int[] habitacion = {1, 2, 3, 4,5};
+        int elegido = habitacionesRandom.nextInt(habitacion.length);
+        
+        
         //Creamos una variable para la batería.
         int carga;
 
@@ -87,7 +90,7 @@ public class Aspiradaw {
 
                     int opcionAspirar = Integer.parseInt(
                             JOptionPane.showInputDialog(fecha + "\n"  + carga 
-                                    + "\n5" + "\nsuma" 
+                                    + "%\n5 dependencias" + "\nsuma" 
                                     + "\nElija una opción:"
                                     + "\n1.Completo"
                                     + "\n2.Dependencias"
@@ -101,46 +104,91 @@ public class Aspiradaw {
                          double restaCarga1 = carga - restaAspiracion1;
                          
                          if(restaCarga1 <= 3){
-                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados."
                                      + "\nRobot: Me voy a mi "
                                      + "base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1");
+                             if (elegido == 1){
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
+                             } else if (elegido == 2) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 2");
+                             } else if (elegido == 3) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la cocina");
+                             } else if (elegido == 4) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el baño");
+                             } else if (elegido == 5) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el salón");
+                             }
                              carga = 100;
                          }else{
                          double restaAspiracion2 = ((1.5 * habitacion2) - habitacion2) + restaAspiracion1;
                          double restaCarga2 = carga - restaAspiracion2;
                          
                          if(restaCarga2 <= 3){
-                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados."
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1 y 2");
+                             if (elegido == 1){
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
+                             } else if (elegido == 2) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 2");
+                             } else if (elegido == 3) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la cocina");
+                             } else if (elegido == 4) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el baño");
+                             } else if (elegido == 5) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el salón");
+                             }
+                             
                           carga = 100;
                          }else{
                          double restaAspiracion3 = ((1.5 * cocina) - cocina) + restaAspiracion2;
                          double restaCarga3 = carga - restaAspiracion3;
                          
                          if(restaCarga3 <= 3){
-                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados."
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1, 2 "
                                      + "y cocina");
+                             if (elegido == 1){
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
+                             } else if (elegido == 2) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 2");
+                             } else if (elegido == 3) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la cocina");
+                             } else if (elegido == 4) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el baño");
+                             } else if (elegido == 5) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el salón");
+                             }
                           carga = 100;
                          }else{
                          double restaAspiracion4 = ((1.5 * salon) - salon) + restaAspiracion3;
                          double restaCarga4 = carga - restaAspiracion4;
                          
                          if(restaCarga4 <= 3){
-                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "%\n5 dependencias"  
                                      + "\n" + suma + " metros cuadrados."
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1, 2 "
                                      + ",cocina y salon");
+                             if (elegido == 1){
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
+                             } else if (elegido == 2) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 2");
+                             } else if (elegido == 3) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la cocina");
+                             } else if (elegido == 4) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el baño");
+                             } else if (elegido == 5) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el salón");
+                             }
                           carga = 100;
                          }else{
                          double restaAspiracion5 = ((1.5 * bano) - bano) + restaAspiracion4;
@@ -148,14 +196,36 @@ public class Aspiradaw {
                          
                          if(restaCarga5 <= 3){
                              JOptionPane.showMessageDialog(null,
-                                     fecha + "\n"  + carga + "\n5" 
+                                     fecha + "\n"  + carga + "%\n5 dependencias"  
                                      + "\n" + suma + " metros cuadrados."
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
                                      + "Ya limpié toda la casa");
+                             if (elegido == 1){
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
+                             } else if (elegido == 2) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 2");
+                             } else if (elegido == 3) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la cocina");
+                             } else if (elegido == 4) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el baño");
+                             } else if (elegido == 5) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el salón");
+                             }
                           carga = 100;
                          }else{
                             JOptionPane.showMessageDialog(null,"Limpié toda la casa");
+                            if (elegido == 1){
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
+                             } else if (elegido == 2) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 2");
+                             } else if (elegido == 3) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la cocina");
+                             } else if (elegido == 4) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el baño");
+                             } else if (elegido == 5) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el salón");
+                             }
                          }
                          } 
                          } 
@@ -169,7 +239,7 @@ public class Aspiradaw {
                             int opcionDependenciasAspirar
                                     = Integer.parseInt(
                                             JOptionPane.showInputDialog(
-                                                    fecha + "\n"  + carga + "\n5" 
+                                                    fecha + "\n"  + carga + "%\n5 dependencias"  
                                                     + "\n" + suma + " metros cuadrados."
                                                     + "\nElija una opción:"
                                                     + "\n1.Habitación 1"
@@ -182,7 +252,7 @@ public class Aspiradaw {
 
                                 case 1:
                                     JOptionPane.showMessageDialog(null,fecha 
-                                            + "\n"  + carga + "\n5" 
+                                            + "\n"  + carga + "%\n5 dependencias" 
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de aspirar "
@@ -190,7 +260,7 @@ public class Aspiradaw {
                                     double resta2 = (1.5 * habitacion1) - habitacion1;
                                     if(resta2 <= 3){
                                     JOptionPane.showMessageDialog(null,fecha 
-                                            + "\n"  + carga + " %\n5" 
+                                            + "\n"  + carga + "%\n5 dependencias" 
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nUy, no tengo batería, me voy a mi base." );
                                     carga = 100;
@@ -198,7 +268,7 @@ public class Aspiradaw {
                                     break;
                                 case 2:
                                     JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
+                                            + "\n"  + carga + "%\n5 dependencias"  
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de aspirar"
@@ -206,7 +276,7 @@ public class Aspiradaw {
                                     double resta3 = (1.5 * habitacion2) - habitacion2;
                                     if(resta3 <= 3){
                                     JOptionPane.showMessageDialog(null,fecha 
-                                            + "\n"  + carga + " %\n5" 
+                                            + "\n"  + carga + "%\n5 dependencias" 
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nUy, no tengo batería, me voy a mi base." );
                                     carga = 100;
@@ -214,14 +284,14 @@ public class Aspiradaw {
                                     break;
                                 case 3:
                                     JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
+                                            + "\n"  + carga + "%\n5 dependencias"  
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de aspirar el salón.");
                                     double resta4 = (1.5 * salon) - salon;
                                     if(resta4 <= 3){
                                     JOptionPane.showMessageDialog(null,fecha 
-                                            + "\n"  + carga + " %\n5" 
+                                            + "\n"  + carga + "%\n5 dependencias" 
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nUy, no tengo batería, me voy a mi base." );
                                     carga = 100;
@@ -229,14 +299,14 @@ public class Aspiradaw {
                                     break;
                                 case 4:
                                     JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
+                                            + "\n"  + carga + "%\n5 dependencias" 
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de aspirar la cocina.");
                                     double resta5= (1.5 * cocina) - cocina;
                                     if(resta5 <= 3){
                                     JOptionPane.showMessageDialog(null,fecha 
-                                            + "\n"  + carga + " %\n5" 
+                                            + "\n"  + carga + "%\n5 dependencias"  
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nUy, no tengo batería, me voy a mi base." );
                                     carga = 100;
@@ -244,7 +314,7 @@ public class Aspiradaw {
                                     break;
                                 case 5:
                                     JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
+                                            + "\n"  + carga + "%\n5 dependencias"  
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de aspirar el baño.");
@@ -254,7 +324,7 @@ public class Aspiradaw {
                                     break;
                                 default:
                                     JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
+                                            + "\n"  + carga + "%\n5 dependencias" 
                                             + "\n" + suma + " metros cuadrados."
                                             + "\nIntroduzca un valor válido.");
                                     return;
@@ -267,7 +337,7 @@ public class Aspiradaw {
                             break;
                         default:
                             JOptionPane.showMessageDialog(null, fecha
-                                    + "\n"  + carga + "\n5" 
+                                    + "\n"  + carga + "%\n5 dependencias"  
                                     + "\n" + suma + " metros cuadrados."
                                     + "\nHa introducido datos erróneos");
                           
@@ -278,7 +348,7 @@ public class Aspiradaw {
                 case 2:
 
                     int opcionAspirarYLimpiar = Integer.parseInt(JOptionPane.showInputDialog(
-                            fecha + "\n"  + carga + "\n5" 
+                            fecha + "\n"  + carga + "%\n5 dependencias"  
                             + "\n" + suma + " metros cuadrados."
                             + "\nElija una opción:"
                             + "\n1.Completo"
@@ -288,68 +358,134 @@ public class Aspiradaw {
                         //Completo
                         case 1:
                             JOptionPane.showMessageDialog(null, fecha 
-                                    + "\n"  + carga + "\n5 dependencias" 
+                                    + "\n"  + carga + "%\n5 dependencias" 
                                     + "\n" + suma + " metros cuadrados."
                                     + "\nVamos a aspirar y "
                                     + "limpiar de forma completa");
+                            if (elegido == 1){
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
+                             } else if (elegido == 2) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 2");
+                             } else if (elegido == 3) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la cocina");
+                             } else if (elegido == 4) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el baño");
+                             } else if (elegido == 5) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el salón");
+                             }
                             double restaAspiracionYLimpieza1 = (2.25 * habitacion1) - habitacion1;
                          double restaCarga6 = carga - restaAspiracionYLimpieza1;
                          
                          if(restaCarga6 <= 3){
-                             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a mi "
                                      + "base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1");
+                             if (elegido == 1){
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
+                             } else if (elegido == 2) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 2");
+                             } else if (elegido == 3) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la cocina");
+                             } else if (elegido == 4) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el baño");
+                             } else if (elegido == 5) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el salón");
+                             }
                              carga = 100;
                          }else{
                          double restaAspiracionYLimpieza2 = ((2.25 * habitacion2) - habitacion2) + restaAspiracionYLimpieza1;
                          double restaCarga7 = carga - restaAspiracionYLimpieza2;
                          
                          if(restaCarga7 <= 3){
-                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null,fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1 y 2");
+                             if (elegido == 1){
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
+                             } else if (elegido == 2) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 2");
+                             } else if (elegido == 3) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la cocina");
+                             } else if (elegido == 4) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el baño");
+                             } else if (elegido == 5) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el salón");
+                             }
                           carga = 100;
                          }else{
                          double restaAspiracionYLimpieza3 = ((2.25 * cocina) - cocina) + restaAspiracionYLimpieza2;
                          double restaCarga8 = carga - restaAspiracionYLimpieza3;
                          
                          if(restaCarga8 <= 3){
-                             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "%\n5 dependencias"  
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1, 2 "
                                      + "y cocina");
+                             if (elegido == 1){
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
+                             } else if (elegido == 2) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 2");
+                             } else if (elegido == 3) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la cocina");
+                             } else if (elegido == 4) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el baño");
+                             } else if (elegido == 5) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el salón");
+                             }
                           carga = 100;
                          }else{
                          double restaAspiracionYLimpieza4 = ((2.25 * salon) - salon) + restaAspiracionYLimpieza3;
                          double restaCarga9 = carga - restaAspiracionYLimpieza4;
                          
                          if(restaCarga9 <= 3){
-                             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
                                      + "Hasta ahora limipié solo la habitación 1, 2 "
                                      + ",cocina y salon");
+                             if (elegido == 1){
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
+                             } else if (elegido == 2) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 2");
+                             } else if (elegido == 3) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la cocina");
+                             } else if (elegido == 4) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el baño");
+                             } else if (elegido == 5) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el salón");
+                             }
                           carga = 100;
                          }else{
                          double restaAspiracionYLimpieza5 = ((2.25 * bano) - bano) + restaAspiracionYLimpieza4;
                          double restaCarga10 = carga - restaAspiracionYLimpieza5;
                          
                          if(restaCarga10 <= 3){
-                             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "\n5" 
+                             JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "%\n5 dependencias" 
                                      + "\n" + suma + " metros cuadrados." 
                                      + "\nRobot: Me voy a "
                                      + "mi base a reponer batería\n"
                                      + "Ya limpié toda la casa");
+                             if (elegido == 1){
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 1");
+                             } else if (elegido == 2) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la habitación 2");
+                             } else if (elegido == 3) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en la cocina");
+                             } else if (elegido == 4) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el baño");
+                             } else if (elegido == 5) {
+                                 JOptionPane.showMessageDialog(null, "Estoy en el salón");
+                             }
                           carga = 100;
                          }else{
-                             JOptionPane.showMessageDialog(null,"Limpié toda la casa");
+                             
                          }
                          } 
                          } 
@@ -360,15 +496,16 @@ public class Aspiradaw {
                         //Por dependencias
                         case 2:
                             JOptionPane.showMessageDialog(null, fecha + "\n"  
-                                    + carga + "\n5" + "\n" + suma 
+                                    + carga+ "%\n5" + "dependencias\n" + suma 
                                     + " metros cuadrados."
                                     + "\nVamos a aspirar y limpiar "
                                     + "por dependencias");
                             int opcionDependenciasAspirarYLimpiar
                                     = Integer.parseInt(
                                             JOptionPane.showInputDialog(
-                                                    fecha + "\n"  + carga + "\n5" 
-                                                    + "\n" + suma + " metros cuadrados."
+                                                    fecha + "\n"  + carga  + "%\n5" 
+                                                    + "dependencias\n" 
+                                                    + suma + " metros cuadrados."
                                                     + "\nElija una opción:"
                                                     + "\n1.Habitación 1"
                                                     + "\n2.Habitación 2"
@@ -380,32 +517,32 @@ public class Aspiradaw {
 
                                 case 1:
                                     JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
-                                            + "\n" + suma + " metros cuadrados."
+                                            + "\n"  + carga  + "%\n5" + "dependencias\n" 
+                                            + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de limpiar y "
                                             + "aspirar la habitación 1.");
                                     double resta7 = (2.25 * habitacion1) - habitacion1;
                                     if(resta7 <= 3){
                                     JOptionPane.showMessageDialog(null,fecha 
-                                            + "\n"  + carga + " %\n5" 
-                                            + "\n" + suma + " metros cuadrados."
+                                            + "\n"  + carga  + "%\n5" + "dependencias\n" 
+                                            + suma + " metros cuadrados."
                                             + "\nUy, no tengo batería, me voy a mi base." );
                                     carga = 100;
                                     }
                                     break;
                                 case 2:
                                     JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
-                                            + "\n" + suma + " metros cuadrados."
+                                            + "\n"  + carga  + "%\n5" + "dependencias\n" 
+                                            + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de limpiar y "
                                             + "aspirar la habitación 2.");
                                     double resta8 = (2.25 * habitacion2) - habitacion2;
                                     if(resta8 <= 3){
                                     JOptionPane.showMessageDialog(null,fecha 
-                                            + "\n"  + carga + " %\n5" 
-                                            + "\n" + suma + " metros cuadrados."
+                                            + "\n"  + carga  + "%\n5" + "dependencias\n" 
+                                            + suma + " metros cuadrados."
                                             + "\nUy, no tengo batería, me voy a mi base." );
                                     carga = 100;
                                     }
@@ -413,8 +550,8 @@ public class Aspiradaw {
                                     break;
                                 case 3:
                                     JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
-                                            + "\n" + suma + " metros cuadrados."
+                                            + "\n"  + carga  + "%\n5" + "dependencias\n" 
+                                            + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de limpiar y "
                                             + "aspirar el salón.");
@@ -423,8 +560,8 @@ public class Aspiradaw {
                                     
                                     if(resta9 <= 3){
                                     JOptionPane.showMessageDialog(null,fecha 
-                                            + "\n"  + carga + " %\n5" 
-                                            + "\n" + suma + " metros cuadrados."
+                                            + "\n"  + carga  + "%\n5" + "dependencias\n" 
+                                            + suma + " metros cuadrados."
                                             + "\nUy, no tengo batería, me voy a mi base." );
                                     carga = 100;
                                     }
@@ -433,8 +570,8 @@ public class Aspiradaw {
                                     break;
                                 case 4:
                                     JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
-                                            + "\n" + suma + " metros cuadrados."
+                                            + "\n"  + carga  + "%\n5" + "dependencias\n" 
+                                            + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de limpiar y "
                                             + "aspirar la cocina.");
@@ -443,8 +580,8 @@ public class Aspiradaw {
                                     
                                     if(resta10 <= 3){
                                     JOptionPane.showMessageDialog(null,fecha 
-                                            + "\n"  + carga + " %\n5" 
-                                            + "\n" + suma + " metros cuadrados."
+                                            + "\n"  + carga  + "%\n5" + "dependencias\n" 
+                                            + suma + " metros cuadrados."
                                             + "\nUy, no tengo batería, me voy a mi base." );
                                     
                                     carga = 100;
@@ -454,8 +591,8 @@ public class Aspiradaw {
                                     break;
                                 case 5:
                                     JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
-                                            + "\n" + suma + " metros cuadrados."
+                                            + "\n"  + carga  + "%\n5" + "dependencias\n" 
+                                            + suma + " metros cuadrados."
                                             + "\nEligió la opción "
                                             + "de limpiar y "
                                             + "aspirar el baño.");
@@ -464,8 +601,8 @@ public class Aspiradaw {
                                     
                                     if(resta11 <= 3){
                                     JOptionPane.showMessageDialog(null,fecha 
-                                            + "\n"  + carga + " %\n5" 
-                                            + "\n" + suma + " metros cuadrados."
+                                            + "\n"  + carga  + "%\n5" + "dependencias\n" 
+                                            + suma + " metros cuadrados."
                                             + "\nUy, no tengo batería, me voy a mi base." );
                                     carga = 100;
                                     }
@@ -473,14 +610,15 @@ public class Aspiradaw {
                                     break;
                                 case 6:
                                     JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
-                                            + "\n" + suma + " metros cuadrados."
+                                            + "\n"  + carga  + "%\n5" 
+                                            + "dependencias\n" 
+                                            + suma + " metros cuadrados."
                                             + "\nHasta la próxima.");
                                     break;
                                 default:
                                     JOptionPane.showMessageDialog(null, fecha 
-                                            + "\n"  + carga + "\n5" 
-                                            + "\n" + suma + " metros cuadrados."
+                                            + "\n"  + carga  + "%\n5" + "dependencias\n" 
+                                            + suma + " metros cuadrados."
                                             + "\nIntroduzca un valor válido.");
                                     break;
 
@@ -494,19 +632,23 @@ public class Aspiradaw {
 
                 case 3:
                     JOptionPane.showMessageDialog(null, fecha + "\n" 
-                            + carga + "\n5" + "\n" + suma + " metros cuadrados."
+                            + carga  + "%\n5" + "dependencias\n" 
+                            + suma + " metros cuadrados."
                             + "\nHasta la próxima");
                     break;
 
                 default:
                     JOptionPane.showMessageDialog(null, fecha + "\n"  
-                            + carga + "\n5" + "\n" + suma + " metros cuadrados."
+                            + carga + "%\n5" + "dependencias\n" 
+                            + suma + " metros cuadrados."
                             + "\nHa introducido un valor incorrecto.");
                     
 
             }
+            
         } else {
-            JOptionPane.showMessageDialog(null, fecha + "\n"  + carga + "\n5"
+            JOptionPane.showMessageDialog(null, fecha + "\n"  
+                    + carga  + "%\n5" + "dependencias\n" 
                     + "\nHa introducido "
                     + "datos erróneos");
             
